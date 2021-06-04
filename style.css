@@ -1,0 +1,282 @@
+/* *********************************
+************* BASE */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 14px;
+}
+
+.all-container {
+    max-width: 1440px;
+    height: 100vh;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    padding-top: 1px;
+}
+
+.container {
+  max-width: 800px;
+  width: 90%;
+  margin: 40px auto 0;
+}
+
+/* ********************************
+******************* BUTTON */
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: inherit;
+  display: inline-block;
+}
+.check-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid hsl(233, 14%, 35%);
+  margin-right: 10px;
+}
+.check-btn img {
+  display: none;
+}
+.completed .check-btn {
+  background: linear-gradient(135deg, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.completed .check-btn img {
+  width: 55%;
+  display: block;
+  pointer-events: none;
+}
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+}
+.delete-btn img {
+  height: 15px;
+  width: 15px;
+}
+
+/* *********************************
+**************** Theme */
+.light{
+    background-color: hsl(236, 33%, 92%);
+}
+.light .all-container{
+  background-image: url(./images/bg-mobile-light.jpg);
+  background-color: hsl(236, 33%, 92%);
+}
+.light .todo-form,
+.light .todo-filter {
+  background: hsl(0, 0%, 98%);
+}
+.light .todo-container,
+.light .todo-form input {
+  background: hsl(0, 0%, 98%);
+  color: hsl(235, 19%, 35%);
+}
+.light .todo-filter button {
+  color: hsl(236, 9%, 61%);
+}
+.light .todo-container .completed,
+.todo-form input::placeholder,
+.light .todo-option,
+.light .todo-option button {
+  color: hsl(236, 9%, 61%);
+}
+.light .check-btn {
+  border: 1px solid hsl(233, 11%, 84%);
+}
+.light .todo-container .todo-item {
+  border-bottom: 1px solid hsl(233, 11%, 84%);
+}
+
+.dark {
+    background-color: hsl(235, 21%, 11%);
+}
+.dark .all-container {
+  background-image: url(./images/bg-mobile-dark.jpg);
+  background-color: hsl(235, 21%, 11%);
+}
+.dark .todo-form,
+.dark .todo-filter {
+  background: hsl(235, 24%, 19%);
+}
+.dark .todo-container,
+.dark .todo-form input {
+  background: hsl(235, 24%, 19%);
+  color: hsl(234, 39%, 85%);
+}
+.dark .todo-filter button {
+  color: hsl(233, 14%, 35%);
+}
+.dark .todo-container .completed,
+.todo-form input::placeholder,
+.dark .todo-option,
+.dark .todo-option button {
+  color: hsl(234, 11%, 52%);
+}
+.dark .check-btn {
+  border: 1px solid hsl(233, 14%, 35%);
+}
+.dark .todo-container .todo-item {
+  border-bottom: 1px solid hsl(233, 14%, 35%);
+}
+
+/* ***************************************
+******************** Header */
+header {
+  display: flex;
+  align-items: center;
+  color: #f1f1f1;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 25px;
+  letter-spacing: 0.5em;
+  margin-right: auto;
+}
+header .theme-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+/* *********************************
+************* TODO FORM  */
+.todo-form {
+  height: 45px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.todo-form label {
+  display: none;
+}
+.todo-form input {
+    font-size: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+  height: 80%;
+  width: 80%;
+}
+.todo-form input::placeholder {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: inherit;
+}
+
+/* *********************************
+************* TODO CONTAINER  */
+.todo-container {
+    margin: 30px 0;
+}
+
+.todo-container {
+  border-radius: 4px;
+  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.2);
+}
+.todo-container .todo-item,
+.todo-option {
+  height: 45px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+}
+.todo-option {
+    justify-content: space-between;
+}
+
+.todo-filter {
+    display: flex;
+    align-items: center;
+}
+
+.completed span {
+  text-decoration: line-through;
+}
+.todo-option button {
+  font-family: inherit;
+}
+.todo-container .todo-list .hidden {
+  display: none;
+}
+
+.todo-filter button {
+  font-weight: 700;
+}
+.todo-filter button:nth-child(2) {
+  margin: 0 20px;
+}
+.container .todo-filter .selected {
+  color: hsl(220, 98%, 61%);
+}
+
+/* **************************************
+******************* MEDIA QUERY */
+
+@media screen and (min-width: 375px) {
+  .light .all-container {
+    background-image: url(./images/bg-desktop-light.jpg);
+  }
+  .dark .all-container {
+    background-image: url(./images/bg-desktop-dark.jpg);
+  }
+}
+
+@media screen and (min-width: 600px) {
+    body,
+    .todo-form input::placeholder {
+      font-size: 16px;
+    }
+
+    .todo-container {
+        margin: 40px 0;
+    }
+  
+    .todo-container .todo-item,
+    .todo-option,
+    .todo-form,
+    .todo-filter {
+      height: 50px;
+    }
+  }
+  
+@media screen and (min-width: 800px) {
+  body,
+  .todo-form input::placeholder {
+    font-size: 18px;
+  }
+
+  .header h1 {
+    font-size: 30px;
+  }
+
+  .todo-container {
+    margin: 50px 0;
+}
+
+  .todo-container .todo-item,
+  .todo-option,
+  .todo-form,
+  .todo-filter {
+    height: 60px;
+  }
+}
+
